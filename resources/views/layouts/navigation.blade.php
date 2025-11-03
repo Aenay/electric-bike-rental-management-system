@@ -15,6 +15,18 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('stations.index')" :active="request()->routeIs('stations.*')">
+                        Stations
+                    </x-nav-link>
+                    <x-nav-link :href="route('bikes.index')" :active="request()->routeIs('bikes.*')">
+                        Bikes
+                    </x-nav-link>
+                    <x-nav-link :href="route('rentals.index')" :active="request()->routeIs('rentals.*')">
+                        Rentals
+                    </x-nav-link>
+                    <x-nav-link :href="route('maintenance.index')" :active="request()->routeIs('maintenance.*')">
+                        Maintenance
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -69,6 +81,18 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('stations.index')" :active="request()->routeIs('stations.*')">
+                Stations
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('bikes.index')" :active="request()->routeIs('bikes.*')">
+                Bikes
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('rentals.index')" :active="request()->routeIs('rentals.*')">
+                Rentals
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('maintenance.index')" :active="request()->routeIs('maintenance.*')">
+                Maintenance
             </x-responsive-nav-link>
         </div>
 
