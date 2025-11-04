@@ -21,5 +21,3 @@ class Station extends Model
         return $this->hasMany(Bike::class);
     }
 }
-
-

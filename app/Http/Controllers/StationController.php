@@ -55,5 +55,3 @@ class StationController extends Controller
         return redirect()->route('stations.index')->with('status', 'Station deleted');
     }
 }
-
-

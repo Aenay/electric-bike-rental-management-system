@@ -33,5 +33,3 @@ class Bike extends Model
         return $this->hasMany(Rental::class);
     }
 }
-
-

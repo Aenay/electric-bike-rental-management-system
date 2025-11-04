@@ -35,5 +35,3 @@ class Rental extends Model
         return $this->belongsTo(Bike::class);
     }
 }
-
-

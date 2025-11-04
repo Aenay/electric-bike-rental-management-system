@@ -26,5 +26,3 @@ class Maintenance extends Model
         return $this->belongsTo(Bike::class);
     }
 }
-
-

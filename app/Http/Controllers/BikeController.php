@@ -60,5 +60,3 @@ class BikeController extends Controller
         return redirect()->route('bikes.index')->with('status', 'Bike deleted');
     }
 }
-
-
