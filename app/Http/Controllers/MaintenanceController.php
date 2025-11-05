@@ -32,6 +32,11 @@ class MaintenanceController extends Controller
         ]);
 
         Maintenance::create($data);
+        
+        // Automatically update bike status to maintenance
+        $bike = Bike::find($data['bike_id']);
+        $bike->update(['status' => 'maintenance']);
+        
         return redirect()->route('maintenance.index')->with('status', 'Maintenance created');
     }
 
@@ -51,11 +56,24 @@ class MaintenanceController extends Controller
         ]);
 
         $maintenance->update($data);
+        
+        // Update bike status based on maintenance status
+        $bike = Bike::find($data['bike_id']);
+        if ($data['status'] === 'completed') {
+            $bike->update(['status' => 'available']);
+        } else {
+            $bike->update(['status' => 'maintenance']);
+        }
+        
         return redirect()->route('maintenance.index')->with('status', 'Maintenance updated');
     }
 
     public function destroy(Maintenance $maintenance): RedirectResponse
     {
+        // Restore bike status when maintenance is deleted
+        $bike = Bike::find($maintenance->bike_id);
+        $bike->update(['status' => 'available']);
+        
         $maintenance->delete();
         return redirect()->route('maintenance.index')->with('status', 'Maintenance deleted');
     }
