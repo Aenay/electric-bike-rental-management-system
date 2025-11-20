@@ -32,7 +32,7 @@
                                         <td class="px-4 py-2">{{ $m->issue }}</td>
                                         <td class="px-4 py-2">{{ optional($m->repair_date)->format('Y-m-d') ?: '—' }}</td>
                                         <td class="px-4 py-2">{{ $m->status }}</td>
-                                        <td class="px-4 py-2 text-right space-x-2">
+                                        <td class="px-4 py-2 text-right flex space-x-2">
                                             <a href="{{ route('maintenance.edit', $m) }}" class="px-3 py-1 rounded bg-gray-200 dark:bg-gray-700">Edit</a>
                                             <form action="{{ route('maintenance.destroy', $m) }}" method="POST" class="inline">
                                                 @csrf
